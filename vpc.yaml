@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "cft live coding"
+Parameters:
+  CIDR:
+    Type: String
+    Default: 10.0.0.0/16
+    AllowedValues:
+      - 10.0.0.0/16
+      - 10.1.0.0/16
+      - 10.2.0.0/16 
+      - 10.3.0.0/16
+      
+    Description: Enter t2.micro, m1.small, or m1.large. Default is t2.micro.
+
+
+Resources:
+  vpc:
+   Type: AWS::EC2::VPC
+   Properties:
+      CidrBlock: !Ref CIDR
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      Tags: 
+        -
+         Key: Name
+         Value: Demovpc
+
