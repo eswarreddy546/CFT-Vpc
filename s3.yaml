@@ -1,0 +1,7 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "cft live coding"
+Resources:
+ S3:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+     BucketName: "tred-dem0-rtee"
